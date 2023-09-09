@@ -4,7 +4,6 @@ window.tracker
 window.panelSpecies = ""
 window.scrollToSpecies = ""
 window.historyObj = []
-window.timeout = false
 
 const tableFilter = document.getElementById("tableFilter")
 
@@ -491,7 +490,6 @@ backup.addEventListener("click", async () => {
 })
 
 async function useBackup(){
-    console.log("Used Backup")
     history.pushState(null, null, location.href)
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)

@@ -2,7 +2,6 @@ function regexAbilities(textAbilities, abilities){
     const lines = textAbilities.split("\n")
 
     lines.forEach(line => {
-        checkTimeout()
         const matchAbility = line.match(/ABILITY_\w+/i)
         if(matchAbility){
             ability = matchAbility[0]
@@ -83,7 +82,7 @@ function regexAbilitiesIngameName(textAbilitiesIngameName, abilities){
     let abilityFound = false, abilitySanitizedFound = false, ability = "", abilitySanitized = ""
 
     lines.forEach(line => {
-        checkTimeout()
+
         if(abilityFound === true)
             abilities[ability]["ingameName"] = line.trim()
         else if(abilitySanitizedFound === true)
@@ -122,7 +121,6 @@ function regexAbilitiesDescription(textAbilitiesDescription, abilities){
     let abilityArray = []
 
     lines.forEach(line => {
-        checkTimeout()
         if(!line.includes("#ifdef")){
 
         let ability = "", abilitySanitized = ""
@@ -131,9 +129,6 @@ function regexAbilitiesDescription(textAbilitiesDescription, abilities){
         if(matchAbility){
             ability = `ABILITY_${matchAbility[1]}`
             abilitySanitized = `ABILITY_${matchAbility[1].replace(/_/g, "")}`
-            if(abilitySanitized === "ABILITY_HADRONEENGINE"){
-                abilitySanitized = "ABILITY_HADRONENGINE"
-            }
         }
         else{
             for (let i = 0; i < abilityArray.length; i++)
@@ -159,7 +154,6 @@ function regexNewAbilities(textNewAbilities, abilities){
     let speciesName = "", ability = "", replaceAbility = ""
 
     lines.forEach(line => {
-        checkTimeout()
         if(line.includes("{")){
             speciesName = ""
             ability = ""

@@ -11,11 +11,6 @@ async function getStrategies(strategies){
 
 async function buildStrategiesObj(){
     let strategies = {}
-
-    setTimeout(() => {
-        timeout = true
-    }, "3000");
-
     try{
         strategies = await getStrategies(strategies)
     }
