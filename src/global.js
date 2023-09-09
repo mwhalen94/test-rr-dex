@@ -1,4 +1,4 @@
-window.repo = "ydarissep/Radical-Red-Pokedex"
+window.repo = "mwhalen94/test-rr-dex"
 
 window.tracker
 window.panelSpecies = ""
